@@ -1,0 +1,198 @@
+[debug] [2021-07-08T18:00:37.795Z] ----------------------------------------------------------------------
+[debug] [2021-07-08T18:00:37.818Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\VSQUARE\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2021-07-08T18:00:37.823Z] CLI Version:   9.14.0
+[debug] [2021-07-08T18:00:37.828Z] Platform:      win32
+[debug] [2021-07-08T18:00:37.829Z] Node Version:  v14.17.3
+[debug] [2021-07-08T18:00:37.840Z] Time:          Thu Jul 08 2021 23:30:37 GMT+0530 (India Standard Time)
+[debug] [2021-07-08T18:00:37.841Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-07-08T18:00:38.006Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-07-08T18:00:38.010Z] > authorizing via signed-in user (itzmekallamvenkatesh@gmail.com)
+[debug] [2021-07-08T18:00:38.011Z] [iam] checking project learning-7d9c6 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2021-07-08T18:00:38.033Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-07-08T18:00:38.035Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-07-08T18:00:38.803Z] <<< HTTP RESPONSE 200 {"date":"Thu, 08 Jul 2021 18:00:37 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-07-08T18:00:38.923Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/learning-7d9c6:testIamPermissions  
+ {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2021-07-08T18:00:39.683Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 08 Jul 2021 18:00:38 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=265","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-07-08T18:00:39.689Z] >>> HTTP REQUEST POST https://iam.googleapis.com/v1/projects/learning-7d9c6/serviceAccounts/learning-7d9c6@appspot.gserviceaccount.com:testIamPermissions  
+ {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2021-07-08T18:01:01.171Z] [functions] service account IAM check errored, deploy may fail: Server Error. connect ETIMEDOUT 172.217.167.170:443 {"name":"FirebaseError","children":[],"exit":2,"message":"Server Error. connect ETIMEDOUT 172.217.167.170:443","original":{"errno":-4039,"code":"ETIMEDOUT","syscall":"connect","address":"172.217.167.170","port":443},"status":500}
+[info] 
+[info] === Deploying to 'learning-7d9c6'...
+[info] 
+[info] i  deploying functions 
+[debug] [2021-07-08T18:01:01.218Z] Validating nodejs source
+[debug] [2021-07-08T18:01:28.756Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "14"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "busboy": "^0.3.1",
+    "express": "^4.17.1",
+    "firebase": "^8.7.0",
+    "firebase-admin": "^9.8.0",
+    "firebase-functions": "^3.14.1",
+    "uuid": "^8.3.2",
+    "validator": "^13.6.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2021-07-08T18:01:28.757Z] Building nodejs source
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[debug] [2021-07-08T18:01:28.767Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/learning-7d9c6/services/cloudfunctions.googleapis.com  
+ 
+[debug] [2021-07-08T18:01:28.770Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/learning-7d9c6/services/runtimeconfig.googleapis.com  
+ 
+[debug] [2021-07-08T18:01:28.772Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/learning-7d9c6/services/cloudbuild.googleapis.com  
+ 
+[debug] [2021-07-08T18:01:30.875Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 08 Jul 2021 18:01:29 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-07-08T18:02:11.006Z] Error: connect ETIMEDOUT 142.250.192.10:443
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1148:16)
+[error] 
+[error] Error: Server Error. connect ETIMEDOUT 142.250.192.10:443
+[debug] [2021-07-08T18:20:45.565Z] ----------------------------------------------------------------------
+[debug] [2021-07-08T18:20:45.572Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\VSQUARE\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2021-07-08T18:20:45.574Z] CLI Version:   9.14.0
+[debug] [2021-07-08T18:20:45.574Z] Platform:      win32
+[debug] [2021-07-08T18:20:45.575Z] Node Version:  v14.17.3
+[debug] [2021-07-08T18:20:45.578Z] Time:          Thu Jul 08 2021 23:50:45 GMT+0530 (India Standard Time)
+[debug] [2021-07-08T18:20:45.579Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-07-08T18:20:45.622Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-07-08T18:20:45.622Z] > authorizing via signed-in user (itzmekallamvenkatesh@gmail.com)
+[debug] [2021-07-08T18:20:45.623Z] [iam] checking project learning-7d9c6 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2021-07-08T18:20:45.629Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/learning-7d9c6:testIamPermissions  
+ {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2021-07-08T18:21:06.894Z] [iam] error while checking permissions, command may fail: FirebaseError: Server Error. connect ETIMEDOUT 142.251.42.42:443
+[debug] [2021-07-08T18:21:06.897Z] >>> HTTP REQUEST POST https://iam.googleapis.com/v1/projects/learning-7d9c6/serviceAccounts/learning-7d9c6@appspot.gserviceaccount.com:testIamPermissions  
+ {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2021-07-08T18:21:28.095Z] [functions] service account IAM check errored, deploy may fail: Server Error. connect ETIMEDOUT 142.250.192.10:443 {"name":"FirebaseError","children":[],"exit":2,"message":"Server Error. connect ETIMEDOUT 142.250.192.10:443","original":{"errno":-4039,"code":"ETIMEDOUT","syscall":"connect","address":"142.250.192.10","port":443},"status":500}
+[info] 
+[info] === Deploying to 'learning-7d9c6'...
+[info] 
+[info] i  deploying functions 
+[debug] [2021-07-08T18:21:28.130Z] Validating nodejs source
+[debug] [2021-07-08T18:21:35.348Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "14"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "busboy": "^0.3.1",
+    "express": "^4.17.1",
+    "firebase": "^8.7.0",
+    "firebase-admin": "^9.8.0",
+    "firebase-functions": "^3.14.1",
+    "uuid": "^8.3.2",
+    "validator": "^13.6.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2021-07-08T18:21:35.349Z] Building nodejs source
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[debug] [2021-07-08T18:21:35.352Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/learning-7d9c6/services/cloudfunctions.googleapis.com  
+ 
+[debug] [2021-07-08T18:21:35.353Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/learning-7d9c6/services/runtimeconfig.googleapis.com  
+ 
+[debug] [2021-07-08T18:21:35.354Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/learning-7d9c6/services/cloudbuild.googleapis.com  
+ 
+[debug] [2021-07-08T18:21:37.844Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 08 Jul 2021 18:21:36 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-07-08T18:21:37.940Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 08 Jul 2021 18:21:36 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2021-07-08T18:22:17.696Z] Error: connect ETIMEDOUT 216.58.203.10:443
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1148:16)
+[error] 
+[error] Error: Server Error. connect ETIMEDOUT 216.58.203.10:443
+[debug] [2021-07-08T18:24:58.924Z] ----------------------------------------------------------------------
+[debug] [2021-07-08T18:24:58.936Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\VSQUARE\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2021-07-08T18:24:58.938Z] CLI Version:   9.14.0
+[debug] [2021-07-08T18:24:58.939Z] Platform:      win32
+[debug] [2021-07-08T18:24:58.939Z] Node Version:  v14.17.3
+[debug] [2021-07-08T18:24:58.944Z] Time:          Thu Jul 08 2021 23:54:58 GMT+0530 (India Standard Time)
+[debug] [2021-07-08T18:24:58.945Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-07-08T18:24:59.014Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-07-08T18:24:59.015Z] > authorizing via signed-in user (itzmekallamvenkatesh@gmail.com)
+[debug] [2021-07-08T18:24:59.016Z] [iam] checking project learning-7d9c6 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2021-07-08T18:24:59.027Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/learning-7d9c6:testIamPermissions  
+ {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2021-07-08T18:25:01.651Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 08 Jul 2021 18:25:00 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=1403","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-07-08T18:25:01.658Z] >>> HTTP REQUEST POST https://iam.googleapis.com/v1/projects/learning-7d9c6/serviceAccounts/learning-7d9c6@appspot.gserviceaccount.com:testIamPermissions  
+ {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2021-07-08T18:25:22.753Z] [functions] service account IAM check errored, deploy may fail: Server Error. connect ETIMEDOUT 142.250.192.74:443 {"name":"FirebaseError","children":[],"exit":2,"message":"Server Error. connect ETIMEDOUT 142.250.192.74:443","original":{"errno":-4039,"code":"ETIMEDOUT","syscall":"connect","address":"142.250.192.74","port":443},"status":500}
+[info] 
+[info] === Deploying to 'learning-7d9c6'...
+[info] 
+[info] i  deploying functions 
+[debug] [2021-07-08T18:25:22.777Z] Validating nodejs source
+[debug] [2021-07-08T18:27:22.281Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "14"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "busboy": "^0.3.1",
+    "express": "^4.17.1",
+    "firebase": "^8.7.0",
+    "firebase-admin": "^9.8.0",
+    "firebase-functions": "^3.14.1",
+    "uuid": "^8.3.2",
+    "validator": "^13.6.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2021-07-08T18:27:22.281Z] Building nodejs source
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[debug] [2021-07-08T18:27:22.285Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/learning-7d9c6/services/cloudfunctions.googleapis.com  
+ 
+[debug] [2021-07-08T18:27:22.286Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/learning-7d9c6/services/runtimeconfig.googleapis.com  
+ 
+[debug] [2021-07-08T18:27:22.286Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/learning-7d9c6/services/cloudbuild.googleapis.com  
+ 
+[debug] [2021-07-08T18:27:24.367Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 08 Jul 2021 18:27:23 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-07-08T18:28:04.598Z] Error: connect ETIMEDOUT 142.250.183.170:443
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1148:16)
+[error] 
+[error] Error: Server Error. connect ETIMEDOUT 142.250.183.170:443
